@@ -2213,7 +2213,7 @@ async function alignFronts() {
   const ppoIndex = (f, s, ppo) => Math.log2(f / s) * ppo;
   const twoPi = 2 * Math.PI;
   const isFrontsXT = (typeof xt !== "undefined" && !xt && typeof xt32 !== "undefined" && !xt32);
-  const xoCandidates = freqIndex.filter(f => f >= (isFrontsXT ? Math.max(minFreqFR ?? 40, 100) : (minFreqFR ?? 40)) && f <= (maxFreqFR ?? 250));
+  const xoCandidates = freqIndex.filter(f => f >= ((minFreqFR ?? 40)) && f <= (maxFreqFR ?? 250));
   const msNeg = (hardNegative ?? -20) / 1000, msPos = (hardPositive ?? 20) / 1000;
   const delayStep = 0.00003333333333333333, delayValues = [];
   for (let ts = msNeg; ts <= msPos; ts += delayStep) delayValues.push(ts);
